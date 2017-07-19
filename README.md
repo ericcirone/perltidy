@@ -1,10 +1,10 @@
-# Perl::Tidy
+# masontidy-vscode
 
-This extension is a simple formatter for perl code using Perl::Tidy.
+This extension is a simple formatter for mason code using Mason::Tidy.
 
 ## Features
 
-* Format perl code using default formatting command
+* Format mason code using default formatting command
 * Format on save
 * Format selected text
 * Basic linting
@@ -14,17 +14,14 @@ See [CHANGELOG.md](CHANGELOG.md)
 
 ## Requirements
 
-This extension requires that Perl::Tidy is installed.
-To install Perl::Tidy:
-* cpan install Perl::Tidy
-* ppm install Perl-Tidy (if using ActivePerl)
-* sudo apt install perltidy -y (Ubuntu)
-* sudo yum install perltidy -y (CentOS)
+This extension requires that Mason::Tidy is installed.
+To install Mason::Tidy:
+* cpan install Mason::Tidy
 
 ## Extension Settings
 
 This extension contributes the following settings:
 
-* `perltidy.executable`: path to perltidy executable
-* `perltidy.profile`: path to .perltidyrc file.
-* `perltidy.additionalArguments`: array listing any additional arguments to be used with the perltidy command
+* `masontidy.executable`: path to masontidy executable
+* `masontidy.masonVersion`: what version of mason to run Mason::Tidy against
+* `masontidy.additionalArguments`: array listing any additional arguments to be used with the masontidy command

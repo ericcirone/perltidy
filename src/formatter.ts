@@ -4,7 +4,7 @@ import { TextDocument, Range, TextEdit, Position, window } from 'vscode';
 
 export default class Formatter {
     command: string;
-    options: Array<string> = ['-st'];
+    options: Array<string> = ["-p"];
     process: Object;
 
     /**
@@ -12,12 +12,8 @@ export default class Formatter {
      */
     constructor(config: any) {
         this.command = which.sync(config.get('executable', ''));
+        this.options = this.options.concat(["-m=" + config.get('masonVersion')]);
         this.options = this.options.concat(config.get('additionalArguments', []));
-
-        let profile = config.get('profile', '');
-        if (profile) {
-            this.options.push('-pro=' + profile);
-        }
     }
 
     format(document: TextDocument, range?: Range): Promise<TextEdit[]> {

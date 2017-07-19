@@ -1,82 +1,88 @@
 {
-  "name": "perltidy",
-  "displayName": "perltidy",
-  "description": "A Perl code formatter for VSCode",
-  "version": "1.1.1",
-  "publisher": "sfodje",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sfodje/perltidy/issues",
-    "email": "sfodje@outlook.com"
-  },
-  "homepage": "https://github.com/sfodje/perltidy/blob/master/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sfodje/perltidy"
-  },
-  "engines": {
-    "vscode": "^1.6.0"
-  },
-  "categories": [
-    "Linters",
-    "Formatters",
-    "Other"
-  ],
-  "activationEvents": [
-    "*"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "configuration": {
-      "type": "object",
-      "title": "Perl Tidy Configuration",
-      "properties": {
-        "perltidy.executable": {
-          "type": "string",
-          "default": "perltidy",
-          "description": "Path to 'linter' executable"
-        },
-        "perltidy.profile": {
-          "type": "string",
-          "description": "Path to .perltidyrc file"
-        },
-        "perltidy.additionalArguments": {
-          "type": "array",
-          "default": [],
-          "description": "Additional arguments for Perl::Tidy e.g. ['-st', '--indent-columns=3]"
-        }
-      }
-    },
-    "languages": [
-      {
-        "id": "perl",
-        "aliases": [
-          "PERL"
-        ],
-        "extensions": [
-          ".pl",
-          ".pm",
-          ".t"
-        ],
-        "configuration": "./language-configuration.json"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.3",
-    "vscode": "^1.0.0",
-    "mocha": "^2.3.3",
-    "@types/node": "^6.0.40",
-    "@types/mocha": "^2.2.32"
-  },
-  "dependencies": {
-    "child_process": "^1.0.2",
-    "which": "^1.2.12"
-  }
+	"name": "masontidy",
+	"displayName": "masontidy",
+	"description": "A Mason code formatter for VSCode",
+	"version": "1.0.0",
+	"publisher": "ecirone",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ecirone/masontidy-vscode/issues",
+		"email": "ecirone@gmail.com"
+	},
+	"homepage": "https://github.com/ecirone/masontidy-vscode/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ecirone/masontidy-vscode"
+	},
+	"engines": {
+		"vscode": "^1.6.0"
+	},
+	"categories": [
+		"Linters",
+		"Formatters",
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Mason Tidy Configuration",
+			"properties": {
+				"masontidy.executable": {
+					"type": "string",
+					"default": "masontidy",
+					"description": "Path to masontidy executable"
+				},
+				"masontidy.masonVersion": {
+					"type": "number",
+					"default": 2,
+					"description": "Which Mason version?",
+					"enum": [
+						1,
+						2
+					]
+				},
+				"masontidy.additionalArguments": {
+					"type": "array",
+					"default": [],
+					"description": "Additional arguments for Mason::Tidy e.g. ['-indent-block=4', '-indent-perl-block=4']"
+				}
+			}
+		},
+		"languages": [{
+			"id": "mason",
+			"aliases": [
+				"HTML (Mason)",
+				"mason"
+			],
+			"extensions": [
+				".mhtml",
+				".autohandler",
+				".dhandler",
+				".md",
+				".mc"
+			],
+			"configuration": "./language-configuration.json"
+		}]
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^2.0.3",
+		"vscode": "^1.0.0",
+		"mocha": "^2.3.3",
+		"@types/node": "^6.0.40",
+		"@types/mocha": "^2.2.32"
+	},
+	"dependencies": {
+		"child_process": "^1.0.2",
+		"which": "^1.2.12"
+	}
 }
